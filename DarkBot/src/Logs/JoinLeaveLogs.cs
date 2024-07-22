@@ -14,22 +14,22 @@ namespace DarkBot.src.Logs
         public static async Task UserJoin(DiscordClient sender, DSharpPlus.EventArgs.GuildMemberAddEventArgs e)
         {
 
-            if (!e.Member.IsBot)
-            {
-                var role = e.Guild.GetRole(1222923387937226875);
-
-                if (role != null)
-                {
-                    await e.Member.GrantRoleAsync(role);
-                }
-            }
-            var welcomeChannel = e.Guild.GetDefaultChannel();
+            //if (!e.Member.IsBot)
+            //{
+            //    var role = e.Guild.GetRole(1222923387937226875);
+            //
+            //    if (role != null)
+            //    {
+            //        await e.Member.GrantRoleAsync(role);
+            //    }
+            //}
+            var welcomeChannel = e.Guild.GetChannel(978350400216399932);
 
             var welcomeEmbed = new DiscordEmbedBuilder()
             {
                 Color = DiscordColor.Magenta,
-                Title = $"Welcome {e.Member.Nickname} !",
-                Description = $"{e.Member.Mention}, enjoy your stay here. Check out <#1221919932372095178> to claim some Roles!",
+                Title = $"User joined!",
+                Description = $"{e.Member.Nickname} - {e.Member.Mention} joined the Discord",
                 Timestamp = DateTimeOffset.Now,
                 Footer = new DiscordEmbedBuilder.EmbedFooter
                 {
@@ -47,13 +47,13 @@ namespace DarkBot.src.Logs
 
         public static async Task UserLeave(DiscordClient sender, DSharpPlus.EventArgs.GuildMemberRemoveEventArgs e)
         {
-            var logChannel = e.Guild.GetChannel(978346565418770433);
+            var logChannel = e.Guild.GetChannel(978350423482191924);
 
             var welcomeEmbed = new DiscordEmbedBuilder()
             {
                 Color = DiscordColor.Magenta,
-                Title = $"Bye {e.Member.Nickname} !",
-                Description = $"{e.Member.Mention} left the Discord!",
+                Title = $"User left!",
+                Description = $"{e.Member.Nickname} - {e.Member.Mention} left the Discord!",
                 Timestamp = DateTimeOffset.Now,
                 Footer = new DiscordEmbedBuilder.EmbedFooter
                 {
