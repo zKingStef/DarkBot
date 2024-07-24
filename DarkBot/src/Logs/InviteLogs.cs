@@ -19,7 +19,7 @@ namespace DarkBot.src.Logs
                                             AuditLogActionType.InviteDelete,
                                             "Invite deleted!",
                                             $"**User:** {e.Invite.Inviter.Mention} \n" +
-                                            $"**Invite:** {e.Invite.Code} \n" +
+                                            $"**Invite:**  https://discord.gg/{e.Invite.Code} \n" +
                                             $"**Times used**: {e.Invite.Uses}\n" +
                                             $"**max. Uses:** {e.Invite.MaxUses}\n",
                                             DiscordColor.IndianRed);
@@ -31,9 +31,9 @@ namespace DarkBot.src.Logs
                                             1143517864859549776,
                                             "Invite Link created!",
                                             $"**User:** {e.Invite.Inviter.Mention} \n" +
-                                            $"**Invite:** {e.Invite.Code}, **expires** {e.Invite.ExpiresAt} \n" +
+                                            $"**Link:** https://discord.gg/{e.Invite.Code}, **expires** {e.Invite.ExpiresAt} \n" +
                                             $"**max. Uses:** {e.Invite.MaxUses} \n",
-                                            DiscordColor.Orange);
+                                            DiscordColor.Purple);
         }
     }
 }

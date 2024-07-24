@@ -14,7 +14,7 @@ namespace DarkBot.src.SlashCommands
 {
 	public class Moderation_SL : ApplicationCommandModule
 	{
-        [SlashCommand("clear", "Delete messages from the chat")]
+        [SlashCommand("clear", "Delete messages from chat")]
         public  async Task Clear(InteractionContext ctx,
                                [Option("amount", "Amount of to be deleted messages")] double delNumber)
         {
@@ -50,6 +50,24 @@ namespace DarkBot.src.SlashCommands
                                                  $"Deleted by: {ctx.User.Mention}",
                                                  DiscordColor.Yellow,
                                                  1143516841357086870);
+
+            await ctx.Channel.DeleteMessagesAsync(messages);
+        }
+
+        [SlashCommand("sclear", "Delete messages from the chat")]
+        public async Task SilentClear(InteractionContext ctx,
+                               [Option("amount", "Amount of to be deleted messages")] double delNumber)
+        {
+            if (!CmdShortener.CheckPermissions(ctx, Permissions.Administrator))
+            {
+                await CmdShortener.SendAsEphemeral(ctx, ":x: Insufficient permissions!");
+                return;
+            }
+
+            await ctx.Interaction.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder()
+                                                     .WithContent(($"The last {delNumber} messages have been silently deleted!")).AsEphemeral(true));
+
+            var messages = await ctx.Channel.GetMessagesAsync((int)(delNumber));
 
             await ctx.Channel.DeleteMessagesAsync(messages);
         }

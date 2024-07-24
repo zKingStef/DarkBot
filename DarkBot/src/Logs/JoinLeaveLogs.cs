@@ -11,38 +11,42 @@ namespace DarkBot.src.Logs
 {
     public class JoinLeaveLogs
     {
-        public static async Task UserJoin(DiscordClient sender, DSharpPlus.EventArgs.GuildMemberAddEventArgs e)
+        public static Task UserJoin(DiscordClient sender, DSharpPlus.EventArgs.GuildMemberAddEventArgs e)
         {
-
-            //if (!e.Member.IsBot)
-            //{
-            //    var role = e.Guild.GetRole(1222923387937226875);
+            // give member role to new users
+            var role = e.Guild.GetRole(1221805367466528908);
+            e.Member.GrantRoleAsync(role);
             //
-            //    if (role != null)
+            //
+            //var welcomeChannel = e.Guild.GetChannel(978350400216399932);
+            //
+            //var welcomeEmbed = new DiscordEmbedBuilder()
+            //{
+            //    Color = DiscordColor.Magenta,
+            //    Title = $"User joined!",
+            //    Description = $"{e.Member.Nickname} - {e.Member.Mention} joined the Discord",
+            //    Timestamp = DateTimeOffset.Now,
+            //    Footer = new DiscordEmbedBuilder.EmbedFooter
             //    {
-            //        await e.Member.GrantRoleAsync(role);
+            //        Text = e.Guild.Name
+            //    },
+            //    Author = new DiscordEmbedBuilder.EmbedAuthor
+            //    {
+            //        IconUrl = e.Member.AvatarUrl,
+            //        Name = e.Member.Username
             //    }
-            //}
-            var welcomeChannel = e.Guild.GetChannel(978350400216399932);
+            //};
+            //
+            //await welcomeChannel.SendMessageAsync(embed: welcomeEmbed);
 
-            var welcomeEmbed = new DiscordEmbedBuilder()
-            {
-                Color = DiscordColor.Magenta,
-                Title = $"User joined!",
-                Description = $"{e.Member.Nickname} - {e.Member.Mention} joined the Discord",
-                Timestamp = DateTimeOffset.Now,
-                Footer = new DiscordEmbedBuilder.EmbedFooter
-                {
-                    Text = e.Guild.Name
-                },
-                Author = new DiscordEmbedBuilder.EmbedAuthor
-                {
-                    IconUrl = e.Member.AvatarUrl,
-                    Name = e.Member.Username
-                }
-            };
+            // Log-Nachricht oder Begrüßung senden
+            Console.WriteLine($"Neues Mitglied: {e.Member.Username} hat den Server betreten!");
 
-            await welcomeChannel.SendMessageAsync(embed: welcomeEmbed);
+            // Optional: Begrüßungsnachricht senden
+            var welcomeChannel = e.Guild.GetDefaultChannel();
+            welcomeChannel.SendMessageAsync($"Willkommen auf dem Server, {e.Member.Mention}!");
+
+            return Task.CompletedTask;
         }
 
         public static async Task UserLeave(DiscordClient sender, DSharpPlus.EventArgs.GuildMemberRemoveEventArgs e)
