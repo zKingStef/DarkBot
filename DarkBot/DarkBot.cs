@@ -93,7 +93,6 @@ namespace DarkBot
             Slash = Client.UseSlashCommands();
             Client.GetSlashCommands();
             Slash.RegisterCommands<Calculator_SL>();
-            Slash.RegisterCommands<DB_SL>();
             Slash.RegisterCommands<ImgFinder_SL>();
             Slash.RegisterCommands<MiniGame_SL>();
             Slash.RegisterCommands<Misc_SL>();
