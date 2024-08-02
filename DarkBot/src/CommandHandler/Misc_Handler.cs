@@ -27,5 +27,23 @@ namespace DarkBot.src.CommandHandler
                 return "Ungültige Zeitzone.";
             }
         }
+
+        public static string GetClockMessage(string frankfurtTime, string tokyoTime, string aucklandTime, string sydneyTime, string taipeiTime, string hoChiMinhTime, string dhakaTime, string maleTime, string dubaiTime, string zaragozaTime, string reykjavikTime, string saoPauloTime, string newYorkTime)
+        {
+            return $"**Aktuelle Uhrzeit:**\n" +
+                   $"🇩🇪 Deutschland (Frankfurt): {frankfurtTime}\n" +
+                   $"🇯🇵 Japan (Tokio): {tokyoTime}\n" +
+                   $"🇳🇿 Neuseeland (Auckland): {aucklandTime}\n" +
+                   $"🇦🇺 Australien (Sydney): {sydneyTime}\n" +
+                   $"🇹🇼 Taiwan (Taipei): {taipeiTime}\n" +
+                   $"🇻🇳 Vietnam (Ho Chi Minh): {hoChiMinhTime}\n" +
+                   $"🇧🇩 Bangladesch (Dhaka): {dhakaTime}\n" +
+                   $"🇲🇻 Malediven (Male): {maleTime}\n" +
+                   $"🇦🇪 Vereinigte Arabische Emirate (Dubai): {dubaiTime}\n" +
+                   $"🇪🇸 Spanien (Zaragoza): {zaragozaTime}\n" +
+                   $"🇮🇸 Island (Reykjavik): {reykjavikTime}\n" +
+                   $"🇧🇷 Brasilien (São Paulo): {saoPauloTime}\n" +
+                   $"🇺🇸 USA (New York): {newYorkTime}";
+        }
     }
 }
