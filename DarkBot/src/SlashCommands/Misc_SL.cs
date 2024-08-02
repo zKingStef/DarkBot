@@ -41,7 +41,7 @@ namespace DarkBot.src.SlashCommands
             await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().AddEmbed(embed.Build()));
         }
 
-        [SlashCommand("server", "Show Server Informations")]
+        [SlashCommand("server", "Show Server Informationss")]
         public async Task ServerEmbed(InteractionContext ctx)
         {
             string serverDescription = $"**Servername:** {ctx.Guild.Name}\n" +
