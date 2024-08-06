@@ -51,7 +51,7 @@ namespace DarkBot.src.CommandHandler
                     string londonTime
 )
         {
-            return $"**Aktuelle Uhrzeit:**\n" +
+            return $"**World Timer:**\n" +
                    $"🇰🇮 Kiribati: {kiribatiTime}\n" +
                    $"🇳🇿 Neuseeland (Auckland): {aucklandTime}\n" +
                    $"🇦🇺 Australien (Sydney): {sydneyTime}\n" +
@@ -59,19 +59,19 @@ namespace DarkBot.src.CommandHandler
                    $"🇰🇷 Südkorea (Seoul): {seoulTime}\n" +
                    $"🇹🇼 Taiwan (Taipei): {taipeiTime}\n" +
                    $"🇻🇳 Vietnam (Ho Chi Minh): {hoChiMinhTime}\n" +
+                   $"🇹🇭 Thailand (Bangkok): {bangkokTime}\n" +
                    $"🇧🇩 Bangladesch (Dhaka): {dhakaTime}\n" +
                    $"🇲🇻 Malediven (Male): {maleTime}\n" +
                    $"🇦🇪 Vereinigte Arabische Emirate (Dubai): {dubaiTime}\n" +
                    $"🇬🇷 Griechenland (Larissa): {larissaTime}\n" +
                    $"🇪🇸 Spanien (Zaragoza): {zaragozaTime}\n" +
-                   $"🇪🇸 Spanien (Santa Cruz): {santaCruzTime}\n" +
                    $"🇩🇪 Deutschland (Frankfurt): {frankfurtTime}\n" +
+                   $"🇬🇧 Großbritannien (London): {londonTime}\n" +
+                   $"🇪🇸 Spanien (Santa Cruz): {santaCruzTime}\n" +
                    $"🇮🇸 Island (Reykjavik): {reykjavikTime}\n" +
                    $"🇧🇷 Brasilien (São Paulo): {saoPauloTime}\n" +
                    $"🇺🇸 USA (New York): {newYorkTime}\n" +
-                   $"🇺🇸 USA (San Francisco): {sanFranciscoTime}\n" +
-                   $"🇹🇭 Thailand (Bangkok): {bangkokTime}\n" +
-                   $"🇬🇧 Großbritannien (London): {londonTime}";
+                   $"🇺🇸 USA (San Francisco): {sanFranciscoTime}";
         }
     }
 }

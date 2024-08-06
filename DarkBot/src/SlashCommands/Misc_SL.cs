@@ -75,19 +75,19 @@ namespace DarkBot.src.SlashCommands
             var seoulTime = Misc_Handler.GetLocalTime("Asia/Seoul");
             var taipeiTime = Misc_Handler.GetLocalTime("Asia/Taipei");
             var hoChiMinhTime = Misc_Handler.GetLocalTime("Asia/Ho_Chi_Minh");
+            var bangkokTime = Misc_Handler.GetLocalTime("Asia/Bangkok");
             var dhakaTime = Misc_Handler.GetLocalTime("Asia/Dhaka");
             var maleTime = Misc_Handler.GetLocalTime("Indian/Maldives");
             var dubaiTime = Misc_Handler.GetLocalTime("Asia/Dubai");
             var larissaTime = Misc_Handler.GetLocalTime("Europe/Athens");
             var zaragozaTime = Misc_Handler.GetLocalTime("Europe/Madrid");
-            var santaCruzTime = Misc_Handler.GetLocalTime("Atlantic/Canary");
             var frankfurtTime = Misc_Handler.GetLocalTime("Europe/Berlin");
+            var londonTime = Misc_Handler.GetLocalTime("Europe/London");
+            var santaCruzTime = Misc_Handler.GetLocalTime("Atlantic/Canary");
             var reykjavikTime = Misc_Handler.GetLocalTime("Atlantic/Reykjavik");
             var saoPauloTime = Misc_Handler.GetLocalTime("America/Sao_Paulo");
             var newYorkTime = Misc_Handler.GetLocalTime("America/New_York");
             var sanFranciscoTime = Misc_Handler.GetLocalTime("America/Los_Angeles");
-            var bangkokTime = Misc_Handler.GetLocalTime("Asia/Bangkok");
-            var londonTime = Misc_Handler.GetLocalTime("Europe/London");
 
             // Nachricht erstellen
             var response = Misc_Handler.GetClockMessage(
@@ -98,19 +98,19 @@ namespace DarkBot.src.SlashCommands
                 seoulTime,
                 taipeiTime,
                 hoChiMinhTime,
+                bangkokTime,
                 dhakaTime,
                 maleTime,
                 dubaiTime,
                 larissaTime,
                 zaragozaTime,
-                santaCruzTime,
                 frankfurtTime,
+                londonTime,
+                santaCruzTime,
                 reykjavikTime,
                 saoPauloTime,
                 newYorkTime,
-                sanFranciscoTime,
-                bangkokTime,
-                londonTime
+                sanFranciscoTime
             );
 
             var updateButton = new DiscordButtonComponent(ButtonStyle.Secondary, "Button_UpdateTime", "🕐 Update Time");
