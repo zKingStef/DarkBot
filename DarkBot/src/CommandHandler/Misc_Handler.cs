@@ -36,19 +36,19 @@ namespace DarkBot.src.CommandHandler
                     string seoulTime,
                     string taipeiTime,
                     string hoChiMinhTime,
+                    string bangkokTime,
                     string dhakaTime,
                     string maleTime,
                     string dubaiTime,
                     string larissaTime,
                     string zaragozaTime,
-                    string santaCruzTime,
                     string frankfurtTime,
+                    string londonTime,
+                    string santaCruzTime,
                     string reykjavikTime,
                     string saoPauloTime,
                     string newYorkTime,
-                    string sanFranciscoTime,
-                    string bangkokTime,
-                    string londonTime
+                    string sanFranciscoTime
 )
         {
             return $"**World Timer:**\n" +
