@@ -113,9 +113,12 @@ namespace DarkBot.src.SlashCommands
                 londonTime
             );
 
-            // Antworte mit der Uhrzeitnachricht
+            var updateButton = new DiscordButtonComponent(ButtonStyle.Secondary, "Button_UpdateTime", "🕐 Update Time");
+
+            // Antworte mit einer Initialnachricht
             await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder()
                 .WithContent(response)
+                .AddComponents(updateButton)
             );
         }
     }
