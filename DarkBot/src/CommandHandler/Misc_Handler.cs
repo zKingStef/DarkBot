@@ -28,22 +28,51 @@ namespace DarkBot.src.CommandHandler
             }
         }
 
-        public static string GetClockMessage(string frankfurtTime, string tokyoTime, string aucklandTime, string sydneyTime, string taipeiTime, string hoChiMinhTime, string dhakaTime, string maleTime, string dubaiTime, string zaragozaTime, string reykjavikTime, string saoPauloTime, string newYorkTime)
+        public static string GetClockMessage(
+                    string kiribatiTime,
+                    string aucklandTime,
+                    string sydneyTime,
+                    string tokyoTime,
+                    string seoulTime,
+                    string taipeiTime,
+                    string hoChiMinhTime,
+                    string dhakaTime,
+                    string maleTime,
+                    string dubaiTime,
+                    string larissaTime,
+                    string zaragozaTime,
+                    string santaCruzTime,
+                    string frankfurtTime,
+                    string reykjavikTime,
+                    string saoPauloTime,
+                    string newYorkTime,
+                    string sanFranciscoTime,
+                    string bangkokTime,
+                    string londonTime
+)
         {
             return $"**Aktuelle Uhrzeit:**\n" +
-                   $"🇩🇪 Deutschland (Frankfurt): {frankfurtTime}\n" +
-                   $"🇯🇵 Japan (Tokio): {tokyoTime}\n" +
+                   $"🇰🇮 Kiribati: {kiribatiTime}\n" +
                    $"🇳🇿 Neuseeland (Auckland): {aucklandTime}\n" +
                    $"🇦🇺 Australien (Sydney): {sydneyTime}\n" +
+                   $"🇯🇵 Japan (Tokio): {tokyoTime}\n" +
+                   $"🇰🇷 Südkorea (Seoul): {seoulTime}\n" +
                    $"🇹🇼 Taiwan (Taipei): {taipeiTime}\n" +
                    $"🇻🇳 Vietnam (Ho Chi Minh): {hoChiMinhTime}\n" +
                    $"🇧🇩 Bangladesch (Dhaka): {dhakaTime}\n" +
                    $"🇲🇻 Malediven (Male): {maleTime}\n" +
                    $"🇦🇪 Vereinigte Arabische Emirate (Dubai): {dubaiTime}\n" +
+                   $"🇬🇷 Griechenland (Larissa): {larissaTime}\n" +
                    $"🇪🇸 Spanien (Zaragoza): {zaragozaTime}\n" +
+                   $"🇪🇸 Spanien (Santa Cruz): {santaCruzTime}\n" +
+                   $"🇩🇪 Deutschland (Frankfurt): {frankfurtTime}\n" +
                    $"🇮🇸 Island (Reykjavik): {reykjavikTime}\n" +
                    $"🇧🇷 Brasilien (São Paulo): {saoPauloTime}\n" +
-                   $"🇺🇸 USA (New York): {newYorkTime}";
+                   $"🇺🇸 USA (New York): {newYorkTime}\n" +
+                   $"🇺🇸 USA (San Francisco): {sanFranciscoTime}\n" +
+                   $"🇹🇭 Thailand (Bangkok): {bangkokTime}\n" +
+                   $"🇬🇧 Großbritannien (London): {londonTime}";
         }
     }
+}
 }
