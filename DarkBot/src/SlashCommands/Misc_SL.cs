@@ -99,57 +99,13 @@ namespace DarkBot.src.SlashCommands
                 newYorkTime
             );
 
+            var updateButton = new DiscordButtonComponent(ButtonStyle.Secondary, "Button_UpdateTime", "🕐 Update Time");
+
             // Antworte mit einer Initialnachricht
             await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder()
                 .WithContent(response)
+                .AddComponents(updateButton)
             );
-
-            // Warte kurz, bevor die erste Followup-Nachricht gesendet wird
-            await Task.Delay(2000);
-
-            // Nachricht alle 60 Sekunden aktualisieren
-            while (true)
-            {
-                // Aktualisierte Zeiten abrufen
-                frankfurtTime = Misc_Handler.GetLocalTime("Europe/Berlin");
-                tokyoTime = Misc_Handler.GetLocalTime("Asia/Tokyo");
-                aucklandTime = Misc_Handler.GetLocalTime("Pacific/Auckland");
-                sydneyTime = Misc_Handler.GetLocalTime("Australia/Sydney");
-                taipeiTime = Misc_Handler.GetLocalTime("Asia/Taipei");
-                hoChiMinhTime = Misc_Handler.GetLocalTime("Asia/Ho_Chi_Minh");
-                dhakaTime = Misc_Handler.GetLocalTime("Asia/Dhaka");
-                maleTime = Misc_Handler.GetLocalTime("Indian/Maldives");
-                dubaiTime = Misc_Handler.GetLocalTime("Asia/Dubai");
-                zaragozaTime = Misc_Handler.GetLocalTime("Europe/Madrid");
-                reykjavikTime = Misc_Handler.GetLocalTime("Atlantic/Reykjavik");
-                saoPauloTime = Misc_Handler.GetLocalTime("America/Sao_Paulo");
-                newYorkTime = Misc_Handler.GetLocalTime("America/New_York");
-
-                // Aktualisierte Nachricht erstellen
-                response = Misc_Handler.GetClockMessage(
-                    frankfurtTime,
-                    tokyoTime,
-                    aucklandTime,
-                    sydneyTime,
-                    taipeiTime,
-                    hoChiMinhTime,
-                    dhakaTime,
-                    maleTime,
-                    dubaiTime,
-                    zaragozaTime,
-                    reykjavikTime,
-                    saoPauloTime,
-                    newYorkTime
-                );
-
-                // Sende eine Followup-Nachricht mit der aktualisierten Uhrzeit
-                await ctx.FollowUpAsync(new DiscordFollowupMessageBuilder()
-                    .WithContent(response)
-                );
-
-                // 60 Sekunden warten
-                await Task.Delay(TimeSpan.FromSeconds(60));
-            }
         }
     }
 }

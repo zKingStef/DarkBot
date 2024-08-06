@@ -32,9 +32,46 @@ namespace DarkBot.src.Handler
 
             switch (e.Interaction.Data.CustomId)
             {
-                // Cases for Ticket Buttons
-                case "Button_Test":
-                    
+                case "Button_UpdateTime":
+                    // Uhrzeit für verschiedene Städte abrufen
+                    var frankfurtTime = Misc_Handler.GetLocalTime("Europe/Berlin");
+                    var tokyoTime = Misc_Handler.GetLocalTime("Asia/Tokyo");
+                    var aucklandTime = Misc_Handler.GetLocalTime("Pacific/Auckland");
+                    var sydneyTime = Misc_Handler.GetLocalTime("Australia/Sydney");
+                    var taipeiTime = Misc_Handler.GetLocalTime("Asia/Taipei");
+                    var hoChiMinhTime = Misc_Handler.GetLocalTime("Asia/Ho_Chi_Minh");
+                    var dhakaTime = Misc_Handler.GetLocalTime("Asia/Dhaka");
+                    var maleTime = Misc_Handler.GetLocalTime("Indian/Maldives");
+                    var dubaiTime = Misc_Handler.GetLocalTime("Asia/Dubai");
+                    var zaragozaTime = Misc_Handler.GetLocalTime("Europe/Madrid");
+                    var reykjavikTime = Misc_Handler.GetLocalTime("Atlantic/Reykjavik");
+                    var saoPauloTime = Misc_Handler.GetLocalTime("America/Sao_Paulo");
+                    var newYorkTime = Misc_Handler.GetLocalTime("America/New_York");
+
+                    // Nachricht erstellen
+                    var response = Misc_Handler.GetClockMessage(
+                        frankfurtTime,
+                        tokyoTime,
+                        aucklandTime,
+                        sydneyTime,
+                        taipeiTime,
+                        hoChiMinhTime,
+                        dhakaTime,
+                        maleTime,
+                        dubaiTime,
+                        zaragozaTime,
+                        reykjavikTime,
+                        saoPauloTime,
+                        newYorkTime
+                    );
+
+                    var updateButton = new DiscordButtonComponent(ButtonStyle.Secondary, "Button_UpdateTime", "🕐 Update Time");
+
+                    // Antworte mit einer Initialnachricht
+                    await e.Interaction.CreateResponseAsync(InteractionResponseType.UpdateMessage, new DiscordInteractionResponseBuilder()
+                        .WithContent(response)
+                        .AddComponents(updateButton));
+
                     break;
 
                 default:
